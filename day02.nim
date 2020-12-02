@@ -18,7 +18,10 @@ var line = ""
 while readLine(i, line):
   var s = line.split(" ")
   var min_max = s[0].split("-")
-  passwords.add(Password(value: s[2], policy: Policy(min: parseInt(min_max[0]), max: parseInt(min_max[1]), letter: s[1][0])))
+  passwords.add(Password(value: s[2],
+                         policy: Policy(min: parseInt(min_max[0]),
+                                        max: parseInt(min_max[1]),
+                                        letter: s[1][0])))
 
 proc check_pwd(pwd: var Password): int =
   let c = count(pwd.value, pwd.policy.letter)
